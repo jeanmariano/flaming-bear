@@ -33,6 +33,7 @@ ul {
 .open {
     background: #eee;
     background: url('../images/hwbg.png');
+    border:0;
 
 }
 .assignment {
