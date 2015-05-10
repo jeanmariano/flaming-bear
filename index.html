@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Final</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,500,800' rel='stylesheet' type='text/css'>
+    <meta name=viewport content="width=device-width, initial-scale=1">
+  </head>
+  <body ng-app="HomeworkApp">
+    <script src="js/angular.js"></script>
+    <script src="js/app.js"></script>
+    <div class="main" ng-controller="MainController">
+      <div id="nav">
+        <a id="navlink" href="about/index.html">About</a>
+      </div>
+
+      <h1>to do</h1>
+      <ul>
+        <li class="hw" ng-repeat="Homework in Homeworks"
+        ng-click="toggleShow(Homework)"
+        ng-class="Homework.show ? 'open' : ''">
+          <h2>{{ Homework.assignment }}</h2>
+          <div class="assignment" ng-show="Homework.show">
+            <span class="status">{{ Homework.status }}</span>
+            <a href="{{ Homework.url }}" target="_blank"><b>Go to page</b></a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
